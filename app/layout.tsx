@@ -7,7 +7,7 @@ import { ConvexClientProvider } from '@/components/providers/convex-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Seotion',
+  title: 'Jotion',
   description: 'The connected workspace where better,faster work happens',
   icons: {
     icon: [
@@ -27,18 +27,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ConvexClientProvider>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-          storageKey='Seotion-theme-2'
-        >
-          {children}
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            storageKey="Seotion-theme-2"
+          >
+            {children}
+          </ThemeProvider>
         </ConvexClientProvider>
       </body>
     </html>
