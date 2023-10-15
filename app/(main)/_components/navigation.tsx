@@ -144,7 +144,7 @@ export const Navigation = () => {
             <PopoverTrigger className="w-full mt-4">
               <Item label="Trash" icon={Trash} />
             </PopoverTrigger>
-            <PopoverContent side={isMobile ? 'bottom' : 'right'} className="p-0 w-72">
+            <PopoverContent className="p-0 w-72" side={isMobile ? 'bottom' : 'right'}>
               <TrashBox />
             </PopoverContent>
           </Popover>
