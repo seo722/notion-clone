@@ -92,7 +92,7 @@ export const TrashBox = () => {
                 <Undo className="h-4 w-4 text-muted-foreground" />
               </div>
               <ConfirmModal onConfirm={() => onRemove(document._id)}>
-                <div role="button" className="rounded-sm p-2 hover:bg-neutral-200">
+                <div role="button" className="rounded-sm p-2 hover:bg-neutral-200 dark:hover:bg-neutral-600">
                   <Trash className="w-4 h-4 text-muted-foreground" />
                 </div>
               </ConfirmModal>
