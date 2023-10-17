@@ -7,7 +7,7 @@ import { toast } from 'sonner';
 import { Search, Trash, Undo } from 'lucide-react';
 
 import { api } from '@/convex/_generated/api';
-import { Id } from '@/convex/_generated/dataModel';
+import { Doc, Id } from '@/convex/_generated/dataModel';
 import { Spinner } from '@/components/spinner';
 import { Input } from '@/components/ui/input';
 import { ConfirmModal } from '@/components/modals/confirm-modal';
@@ -41,6 +41,13 @@ export const TrashBox = () => {
   };
 
   const onRemove = (documentId: Id<'documents'>) => {
+    // const url = documents?[0].coverImage
+    // if (url) {
+    //   await edgestore.publicFiles.delete({
+    //     url: url,
+    //   });
+    // }
+
     const promise = remove({ id: documentId });
 
     toast.promise(promise, {
