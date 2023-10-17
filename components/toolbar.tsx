@@ -82,7 +82,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
         </div>
       )}
       {!!initialData.icon && preview && <p className="text-6xl pt-6">{initialData.icon}</p>}
-      <div className="opacity-0 group-hover:opacity-100 flex items-center gap-x-1 py-4">
+      <div className="sm:opacity-0 group-hover:opacity-100 flex items-center gap-x-1 py-4">
         {!initialData.icon && !preview && (
           <IconPicker onChange={onIconSelect} asChild>
             <Button className="text-muted-foreground text-xs" variant="outline" size="sm">

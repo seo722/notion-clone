@@ -11,6 +11,7 @@ import { useCoverImage } from '@/hooks/use-cover-image';
 import { api } from '@/convex/_generated/api';
 import { Id } from '@/convex/_generated/dataModel';
 import { useEdgeStore } from '@/lib/edgestore';
+import { Skeleton } from '@/components/ui/skeleton';
 
 interface CoverImageProps {
   url?: string;
@@ -38,7 +39,7 @@ export const Cover = ({ url, preview }: CoverImageProps) => {
     <div className={cn('relative w-full h-[35vh] group', !url && 'h-[12vh]', url && 'bg-muted')}>
       {!!url && <Image src={url} fill alt="Cover" className="object-cover" />}{' '}
       {url && !preview && (
-        <div className="opacity-0 group-hover:opacity-100 absolute bottom-5 right-5 flex items-center gap-x-2">
+        <div className="opacity-70 sm:opacity-0 group-hover:opacity-80 absolute bottom-5 right-5 flex items-center gap-x-2">
           <Button
             onClick={() => coverImage.onReplace(url)}
             className="text-muted-foreground text-xs"
@@ -56,4 +57,8 @@ export const Cover = ({ url, preview }: CoverImageProps) => {
       )}
     </div>
   );
+};
+
+Cover.Skeleton = function CoverSkeleton() {
+  return <Skeleton className="w-full h-[12vh]" />;
 };
